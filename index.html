@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aquapeeling — Sanfte Reinigung der neuen Generation | Soest</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-light: #F5F5F7;
+            --bg-medium: #E8E8EC;
+            --bg-dark: #2D2D33;
+            --bg-footer: #1A1A1E;
+            --accent: #6B2D5C;
+            --accent-light: #9B7CB6;
+            --accent-hover: #7B3FA0;
+            --text-primary: #1A1A1E;
+            --text-secondary: #6B6B73;
+            --text-muted: #4A4A52;
+            --white: #FFFFFF;
+            --shadow-sm: 0 4px 20px rgba(107, 45, 92, 0.08);
+            --shadow-md: 0 8px 40px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.08);
+            --shadow-btn: 0 6px 24px rgba(107, 45, 92, 0.35);
+            --shadow-btn-hover: 0 8px 30px rgba(107, 45, 92, 0.45);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text-primary);
+            background: var(--bg-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        .header {
+            background: var(--white);
+            border-bottom: 1px solid rgba(107, 45, 92, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 0;
+        }
+
+        .header-brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+        }
+
+        .header-logo-img {
+            height: 44px;
+            width: auto;
+            display: block;
+        }
+
+        .header-brand-text {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: 1px;
+        }
+
+        .header-contacts {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .header-contact {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .header-contact:hover {
+            color: var(--accent);
+        }
+
+        .header-contact svg {
+            width: 16px;
+            height: 16px;
+            fill: var(--accent);
+        }
+
+        .header-btn {
+            background: var(--accent);
+            color: var(--white);
+            padding: 10px 24px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .header-btn:hover {
+            background: var(--accent-hover);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-btn);
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--bg-light) 0%, #EDE8F0 100%);
+            padding: 100px 0 120px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(107, 45, 92, 0.06) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            line-height: 1.15;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 .accent {
+            color: var(--accent);
+            font-weight: 700;
+            position: relative;
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 40px;
+            max-width: 540px;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--white);
+            padding: 18px 48px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            box-shadow: var(--shadow-btn);
+            transition: all 0.3s;
+            margin-bottom: 20px;
+        }
+
+        .hero-btn:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-btn-hover);
+        }
+
+        .hero-badges {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .hero-badge {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            color: var(--accent-light);
+            font-weight: 500;
+        }
+
+        .hero-badge svg {
+            width: 16px;
+            height: 16px;
+            fill: var(--accent);
+        }
+
+        .hero-visual {
+            position: relative;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 480px;
+            border-radius: 24px;
+            box-shadow: var(--shadow-lg);
+            object-fit: cover;
+            display: block;
+        }
+
+        .hero-glow {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(107, 45, 92, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(40px);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+        }
+
+        /* Section Common */
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            font-size: 40px;
+            font-weight: 500;
+            text-align: center;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+
+        .section-divider {
+            width: 60px;
+            height: 3px;
+            background: var(--accent);
+            margin: 0 auto 60px;
+            border-radius: 2px;
+        }
+
+        .section-text {
+            font-size: 18px;
+            color: var(--text-muted);
+            line-height: 1.7;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* Problem */
+        .problem {
+            background: var(--white);
+        }
+
+        .problem-icons {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+
+        .problem-item {
+            text-align: center;
+            animation: fadeInUp 0.6s ease-out both;
+        }
+
+        .problem-item:nth-child(1) { animation-delay: 0.1s; }
+        .problem-item:nth-child(2) { animation-delay: 0.2s; }
+        .problem-item:nth-child(3) { animation-delay: 0.3s; }
+        .problem-item:nth-child(4) { animation-delay: 0.4s; }
+
+        .problem-icon {
+            width: 64px;
+            height: 64px;
+            background: rgba(107, 45, 92, 0.08);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-size: 28px;
+        }
+
+        .problem-item p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        /* Solution */
+        .solution {
+            background: var(--bg-light);
+        }
+
+        .solution-intro {
+            margin-bottom: 60px;
+        }
+
+        .solution-subtitle {
+            text-align: center;
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 40px;
+            color: var(--text-primary);
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        .cards-row-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 36px 32px;
+            border-top: 3px solid var(--accent);
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 0;
+            background: linear-gradient(180deg, rgba(107, 45, 92, 0.03) 0%, transparent 100%);
+            transition: height 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 50px rgba(0, 0, 0, 0.1);
+        }
+
+        .card:hover::before {
+            height: 100px;
+        }
+
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(107, 45, 92, 0.08);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        .card p {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .card-badge {
+            display: inline-block;
+            margin-top: 16px;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        .badge-soft {
+            background: #EDE8F0;
+            color: var(--accent);
+        }
+
+        .badge-solid {
+            background: var(--accent);
+            color: var(--white);
+        }
+
+        /* Result */
+        .result {
+            background: var(--white);
+        }
+
+        .result-visual {
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .result-image {
+            width: 100%;
+            max-width: 700px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            display: block;
+        }
+
+        .result-tags {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .result-tag {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .result-tag-icon {
+            font-size: 20px;
+        }
+
+        /* CTA */
+        .cta {
+            background: linear-gradient(135deg, var(--bg-dark) 0%, #3D2D44 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before,
+        .cta::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(107, 45, 92, 0.15) 0%, transparent 70%);
+        }
+
+        .cta::before {
+            top: -200px;
+            left: -100px;
+        }
+
+        .cta::after {
+            bottom: -200px;
+            right: -100px;
+        }
+
+        .cta .section-title {
+            color: var(--white);
+        }
+
+        .cta .section-text {
+            color: rgba(255, 255, 255, 0.75);
+            margin-bottom: 40px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: var(--white);
+            color: var(--accent);
+            padding: 20px 56px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 700;
+            box-shadow: 0 8px 30px rgba(255, 255, 255, 0.15);
+            transition: all 0.3s;
+            margin-bottom: 40px;
+        }
+
+        .cta-btn:hover {
+            background: #F0E8F5;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(255, 255, 255, 0.2);
+        }
+
+        .cta-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .cta-info-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .cta-info-item svg {
+            width: 18px;
+            height: 18px;
+            fill: var(--accent-light);
+            flex-shrink: 0;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--bg-footer);
+            padding: 60px 0 30px;
+        }
+
+        .footer-inner {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand-name {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--accent-light);
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+
+        .footer-desc {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.5);
+            line-height: 1.6;
+            max-width: 280px;
+        }
+
+        .footer-title {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-light);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .footer-links svg {
+            width: 14px;
+            height: 14px;
+            fill: var(--accent-light);
+            flex-shrink: 0;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 24px;
+            text-align: center;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .hero-inner {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero-subtitle {
+                margin: 0 auto 40px;
+            }
+
+            .hero-badges {
+                justify-content: center;
+            }
+
+            .hero-visual {
+                order: -1;
+            }
+
+            .hero-image {
+                height: 320px;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+
+            .cards,
+            .cards-row-2 {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin: 0 auto 24px;
+            }
+
+            .footer-inner {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .footer-desc {
+                max-width: 100%;
+                margin: 0 auto;
+            }
+
+            .problem-icons {
+                gap: 30px;
+            }
+
+            .section {
+                padding: 70px 0;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .result-image {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .header-inner {
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+
+            .header-contacts {
+                display: none;
+            }
+
+            .header-logo-img {
+                height: 38px;
+            }
+
+            .header-brand-text {
+                font-size: 16px;
+            }
+
+            .hero h1 {
+                font-size: 30px;
+            }
+
+            .hero {
+                padding: 60px 0 80px;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .cta-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 16px;
+            }
+
+            .result-image {
+                height: 240px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="#" class="header-brand">
+                    <img src="logo.png" alt="LINUM SOEST" class="header-logo-img">
+                    <span class="header-brand-text">LINUM SOEST</span>
+                </a>
+                <div class="header-contacts">
+                    <a href="tel:+491601751061" class="header-contact">
+                        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        +49 (0)160 - 175 10 61
+                    </a>
+                    <a href="mailto:nfo@linum-soest.de" class="header-contact">
+                        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        nfo@linum-soest.de
+                    </a>
+                    <a href="https://beautinda.de/salon/tGXyhCddrS7HMSqrSUGa" target="_blank" class="header-btn">Termin vereinbaren</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-inner">
+                <div class="hero-content">
+                    <h1>Holen Sie sich <span class="accent">Glanz</span> und Frische für Ihre Haut:<br>Aquapeeling — <span class="accent">sanfte</span> Reinigung der neuen Generation</h1>
+                    <p class="hero-subtitle">Moderne Gerätebehandlung für tiefe Reinigung, Feuchtigkeit und Verjüngung der Gesichtshaut — ohne Schmerzen und Erholungszeit.</p>
+                    <a href="https://beautinda.de/salon/tGXyhCddrS7HMSqrSUGa" target="_blank" class="hero-btn">Termin vereinbaren</a>
+                    <div class="hero-badges">
+                        <div class="hero-badge">
+                            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            Schmerzfrei
+                        </div>
+                        <div class="hero-badge">
+                            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            Sofortiges Ergebnis
+                        </div>
+                        <div class="hero-badge">
+                            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            40 Minuten
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-glow"></div>
+                    <img src="Gemini_Generated_Image_syp7s1syp7s1syp7.jpg" alt="Aquapeeling — Behandlung für strahlende Haut" class="hero-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem -->
+    <section class="section problem">
+        <div class="container">
+            <div class="section-divider"></div>
+            <h2 class="section-title fade-in">Ist Ihre Haut „müde"?</h2>
+            <p class="section-text fade-in">
+                Fühlen Sie, dass Ihre Haut „müde" ist? Täglicher Stress, Stadtstaub und Make-up-Rückstände rauben dem Gesicht allmählich seinen natürlichen Glanz. Normales Waschen kommt nicht mit tiefen Verschmutzungen zurecht, und aggressive Reinigungen hinterlassen oft Rötungen und erfordern eine lange Erholung. Wenn Sie einen stumpfen Teint, erweiterte Poren oder ein Spannungsgefühl bemerkt haben, braucht Ihre Haut einfach „zweite Luft". Wir verstehen, wie wichtig es für Sie ist, makellos auszusehen, ohne dabei auf Komfort zu verzichten.
+            </p>
+            <div class="problem-icons">
+                <div class="problem-item fade-in">
+                    <div class="problem-icon">🏭</div>
+                    <p>Stadtstaub</p>
+                </div>
+                <div class="problem-item fade-in">
+                    <div class="problem-icon">😰</div>
+                    <p>Täglicher Stress</p>
+                </div>
+                <div class="problem-item fade-in">
+                    <div class="problem-icon">💄</div>
+                    <p>Make-up-Rückstände</p>
+                </div>
+                <div class="problem-item fade-in">
+                    <div class="problem-icon">😔</div>
+                    <p>Matter Teint</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution -->
+    <section class="section solution">
+        <div class="container">
+            <h2 class="section-title fade-in">Aquapeeling: Innovative Vakuum-Pflege und Feuchtigkeit</h2>
+            <p class="section-text solution-intro fade-in">
+                Aquapeeling ist eine moderne Gerätebehandlung, die gleichzeitig in drei Richtungen arbeitet: reinigt, nährt und verjüngt. Mit Hilfe eines speziellen Aufsatzes und eines gezielten Stroms von Heilseren erneuern wir zart die obere Hautschicht, ohne sie zu verletzen.
+            </p>
+            <h3 class="solution-subtitle fade-in">Warum wählen unsere Kunden Aquapeeling?</h3>
+            
+            <div class="cards">
+                <div class="card fade-in">
+                    <div class="card-icon">💎</div>
+                    <h3>Tiefe Reinigung</h3>
+                    <p>Die Vakuumtechnologie „zieht" buchstäblich Schmutz und Mitesser aus den Poren und lässt sie sauber und verfeinert zurück.</p>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-icon">💧</div>
+                    <h3>Intensive Feuchtigkeit</h3>
+                    <p>Während der Behandlung wird die Haut mit aktiven Seren mit Hyaluronsäure und Vitaminen auf zellulärer Ebene versorgt.</p>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-icon">✨</div>
+                    <h3>Tonus-Wiederherstellung</h3>
+                    <p>Die leichte Vakuummassage verbessert die Mikrozirkulation und Lymphdrainage und gibt dem Gesicht klare Konturen und Elastizität zurück.</p>
+                </div>
+            </div>
+            
+            <div class="cards-row-2">
+                <div class="card fade-in">
+                    <div class="card-icon">🌿</div>
+                    <h3>Absolute Schmerzfreiheit</h3>
+                    <p>Vergessen Sie Unbehagen. Die Behandlung gibt ein Gefühl angenehmer Kühlung und Frische — Sie können sich entspannen und ausruhen.</p>
+                    <span class="card-badge badge-soft">Keine Erholungszeit</span>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-icon">⏱️</div>
+                    <h3>Sofortiges Ergebnis</h3>
+                    <p>Ihre Haut verwandelt sich sofort. Keine Schwellungen und Rötungen — der Spiegel wird Ihnen schon nach 40 Minuten lächeln.</p>
+                    <span class="card-badge badge-solid">Sofort sichtbar</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Result -->
+    <section class="section result">
+        <div class="container">
+            <h2 class="section-title fade-in">Die Haut, von der Sie geträumt haben</h2>
+            <p class="section-text fade-in">
+                Nach der Aquapeeling-Sitzung werden Sie bemerken, wie das Gesicht unglaublich glatt, weich und wie von innen „beleuchtet" geworden ist. Make-up liegt perfekt, und das Spiegelbild erfreut mit ebenmäßigem Teint und Frische, wie nach einem vollen Urlaub. Dies ist das ideale Verfahren „vor dem Ausgehen" und das Basiselement Ihres Schönheitsprogramms.
+            </p>
+            <div class="result-visual fade-in">
+                <img src="image (18).jpeg" alt="Ergebnis der Aquapeeling-Behandlung — strahlende Haut" class="result-image">
+            </div>
+            <div class="result-tags">
+                <div class="result-tag">
+                    <span class="result-tag-icon">✨</span>
+                    Geschmeidigkeit
+                </div>
+                <div class="result-tag">
+                    <span class="result-tag-icon">💧</span>
+                    Feuchtigkeit
+                </div>
+                <div class="result-tag">
+                    <span class="result-tag-icon">🌟</span>
+                    Strahlen
+                </div>
+                <div class="result-tag">
+                    <span class="result-tag-icon">⏱️</span>
+                    40 Minuten
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta">
+        <div class="container" style="position: relative; z-index: 1;">
+            <h2 class="section-title fade-in">Probieren Sie die Expertenpflege mit einem schönen Bonus!</h2>
+            <p class="section-text fade-in">
+                Die Behandlung ist absolut sicher und komfortabel. Keine Schmerzen, keine Erholungszeit — nur Frische und Glanz für Ihre Haut. Vereinbaren Sie jetzt einen Termin und gönnen Sie sich die verdiente Pflege.
+            </p>
+            <div style="text-align: center;">
+                <a href="https://beautinda.de/salon/tGXyhCddrS7HMSqrSUGa" target="_blank" class="cta-btn fade-in">Termin vereinbaren</a>
+            </div>
+            <div class="cta-info fade-in">
+                <div class="cta-info-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    Werkstr. 8, 59494 Soest
+                </div>
+                <div class="cta-info-item">
+                    <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                    Mo–Sa: 10:00 – 20:00
+                </div>
+                <div class="cta-info-item">
+                    <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                    +49 (0)160 - 175 10 61
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div>
+                    <div class="footer-brand-name">LINUM SOEST</div>
+                    <p class="footer-desc">Kosmetiksalon in Soest. Professionelle Pflege für Gesichts- und Körperhaut.</p>
+                </div>
+                <div>
+                    <div class="footer-title">Kontakt</div>
+                    <ul class="footer-links">
+                        <li>
+                            <a href="#">
+                                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                                Werkstr. 8, 59494 Soest
+                            </a>
+                        </li>
+                        <li>
+                            <a href="tel:+491601751061">
+                                <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                                +49 (0)160 - 175 10 61
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:nfo@linum-soest.de">
+                                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                                nfo@linum-soest.de
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                                Mo–Sa: 10:00 – 20:00
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="footer-title">Navigation</div>
+                    <ul class="footer-links">
+                        <li><a href="#">Leistungen</a></li>
+                        <li><a href="#">Aquapeeling</a></li>
+                        <li><a href="#">Über uns</a></li>
+                        <li><a href="#">Kontakt</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                © 2026 LINUM SOEST. Alle Rechte vorbehalten.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+
+</body>
+</html>
