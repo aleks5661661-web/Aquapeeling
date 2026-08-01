@@ -6,8 +6,13 @@ if (document.getElementById("aqp-banner")) return;
 const image =
 "https://aleks5661661-web.github.io/Aquapeeling/Gemini_Generated_Image_ioc7z0ioc7z0ioc7.jpg";
 
+const currentHost = window.location.hostname || "external";
+
 const link =
-"https://aleks5661661-web.github.io/Aquapeeling/";
+    "https://aleks5661661-web.github.io/Aquapeeling/" +
+    "?utm_source=" + encodeURIComponent(currentHost) +
+    "&utm_medium=banner" +
+    "&utm_campaign=reklAqua1";
 
 const style = document.createElement("style");
 style.textContent = `
